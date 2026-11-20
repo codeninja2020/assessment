@@ -1,9 +1,2 @@
 streamlit
-streamlit-autorefresh
-pillow
-torch
-torch-geometric
 pandas
-numpy
-matplotlib
-
