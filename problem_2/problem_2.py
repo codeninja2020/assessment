@@ -14,22 +14,8 @@ import streamlit as st
 st.set_page_config(page_title="Org Hierarchy Explorer", page_icon="💼", layout="wide")
 
 
-SAMPLE_ROWS = [
-    ("Alice", None),            # CEO
-    ("Bob", "Alice"),           # VP Engineering
-    ("Carol", "Alice"),         # VP Sales
-    ("Dave", "Bob"),            # Eng Manager A
-    ("Erin", "Bob"),            # Eng Manager B
-    ("Frank", "Carol"),         # Sales Manager
-    ("Grace", "Dave"),          # Dev
-    ("Heidi", "Dave"),          # Dev
-    ("Ivan", "Erin"),           # Dev
-    ("Judy", "Erin"),           # Dev
-    ("Karl", "Frank"),          # Sales Rep
-    ("Liam", "Frank"),          # Sales Rep
-    ("Mia", "Grace"),           # Intern
-    ("Nate", "Karl"),           # Sales Rep (junior)
-    ]
+SAMPLE_ROWS = [("Joe", None), ("Harry", "Joe"), ("Chang", "Harry"),
+               ("Mary", "Harry"), ("Alfonse", "Mary")]
 
 
 def build_hierarchy(df: pd.DataFrame):
@@ -57,7 +43,6 @@ def build_hierarchy(df: pd.DataFrame):
 
     cycle_members = detect_cycle_members(children, all_names)
     return children, all_names, cycle_members
-
 
 def detect_cycle_members(children, all_names):
     """
